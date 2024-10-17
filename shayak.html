@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined Codes</title>
+    <style>
+        /* General body styles */
+        body {
+            font-family: 'https://fonts.cdnfonts.com/css/sf-pro-display', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+        body {
+            cursor: url('sahayakcur.png'), auto; /* Default cursor */
+        }
+
+        /* Custom scrollbar styles */
+ ::-webkit-scrollbar {
+            width: 12px; /* Width of the scrollbar */
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #232323; /* Track color */
+            border-radius: 10px; /* Rounded track corners */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ecd551; /* Thumb color */
+            border-radius: 10px; /* Rounded thumb corners */
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ffd900; /* Thumb color on hover */
+        }
+
+
+        /* Main container to hold both text and logo */
+        .container {
+            display: flex; /* Align items side by side */
+            justify-content: space-between; /* Space between text and logo */
+            align-items: center; /* Vertically center align */
+            padding: 40px; /* Space around the content */
+            max-width: 1200px; /* Maximum width of the container */
+            margin: 0 auto; /* Center the container horizontally */
+        }
+
+        /* Text container */
+        .text-section {
+            flex: 1; /* Allow text section to take up available space */
+            max-width: 60%; /* Max width to limit text spread */
+        }
+
+        /* Heading for pain points */
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        /* Style for pain points list */
+        .pain-points ul {
+            list-style-type: disc; /* Bullet points for list */
+            padding-left: 20px; /* Space between bullets and text */
+        }
+
+        /* Style for each pain point item */
+        .pain-points li {
+            font-size: 16px; /* Set a specific font size for pain points */
+            line-height: 1.6; /* Line spacing for readability */
+            color: #333;
+            margin-bottom: 10px; /* Space between list items */
+        }
+
+        /* Logo container */
+        .logo-section {
+            flex: 0 0 30%; /* Fixed size for logo section, no shrink or grow */
+            display: flex;
+            justify-content: center; /* Center the logo horizontally */
+            align-items: center; /* Center the logo vertically */
+            background-color: #333; /* Background for the logo */
+            padding: 2px; /* Padding around the logo */
+            border-radius: 20px; /* Rounded corners */
+            margin-bottom: 40px; /* Added margin to increase space below */
+        }
+
+        /* Image inside the logo section */
+        .logo-section img {
+            width: 100%; /* Logo takes up full width of the container */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        /* Styles for Brief and Problem Statement */
+        .container-2, .container, .container-3 {
+            opacity: 0; /* Initial opacity */
+            transition: opacity 0.5s ease-in-out; /* Smooth transition */
+        }
+
+        /* Add this class when the content is visible */
+        .container-2.visible, .container.visible, .container-3.visible, .finisher.visible {
+            opacity: 1; /* Full opacity when visible */
+        }
+
+        .container-2 {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 40px;
+            max-width: 100%;
+            margin: 0 auto;
+            position: relative;
+            top: 0px;
+            left: 0px;
+        }
+
+        .left {
+            flex: 0 1 auto;
+        }
+
+        .logo {
+            width: 400px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .right {
+            flex: 1;
+            padding-left: 90px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        h2 {
+            font-size: 38px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #555;
+            line-height: 2;
+        }
+
+        /* Solutions section */
+        .container-3 {
+            background-color: #f2d14b;
+            padding: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 3000px;
+            margin: 40px auto;
+            border-radius: 10px;
+            height: 600px;
+            z-index: 3; 
+            position: relative;
+        }
+
+        .text-section-3 {
+            flex: 1;
+            padding-right: 50px;
+        }
+
+        h3 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Style for solutions list */
+        .solutions ul {
+            list-style-type: disc; /* Bullet points for list */
+            padding-left: 20px; /* Space between bullets and text */
+        }
+
+        /* Style for each solution item */
+        .solutions li {
+            font-size: 20px; /* Set a different font size for solutions */
+            line-height: 1.6; /* Line spacing for readability */
+            color: #333;
+            margin-bottom: 10px; /* Space between list items */
+        }
+
+        .image-section {
+            flex: 0 0 30%;
+        }
+
+        .image-section img {
+            width: 280px;
+            height: 600px;
+            border-radius: 10px;
+        }
+
+        .finisher {
+            position: relative;
+            left: 90px;
+            top: 70px;
+            height: 990px;
+            width: 1340px;
+            z-index: 3;
+        }
+
+        .gobackboi {
+            position: relative;
+            left: -600px;
+            top: 400px;
+            width: 118px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            z-index: 3;
+        }
+
+        .gobackboi:hover {
+            transform: scale(1.1);
+            opacity: 0.9;
+            z-index: 3;
+        }
+
+        .footer {
+            height: 50px;
+            background-color: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+            padding: 10px;
+            color: #333;
+            font-size: 16px;
+        }
+
+
+
+        .bottom-box {
+            background-color: #232323;  /* Background color */
+            height: 2500px;  /* Adjustable height */
+            width: 100%;  /* Full width */
+            position: absolute;  /* Positioned relative to the entire page */
+            top: 1500px;  /* Adjust based on your page content */
+            bottom: 0;
+            z-index: 1; /* Lower z-index to place it behind lines */
+            opacity: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-2">
+        <div class="left">
+            <img src="blue saha.png" alt="Sahaya Saarige Logo" class="logo">
+        </div>
+        <div class="right">
+            <h2>Brief</h2>
+            <p>Make an app solving any issue or developing a business on an app.</p>
+            <h2>Problem Statement</h2>
+            <p>To make public transportation a lot more inclusive for the Visually disabled. </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="text-section pain-points">
+            <h1>Pain Points</h1>
+            <ul>
+                <li>Lack of inclusivity for the visually challenged in the public transport sector.</li>
+                <li>Lack of dignity.</li>
+                <li>No proper accessibility integration.</li>
+                <li>No equal opportunity</li>
+            </ul>
+        </div>
+
+        <div class="logo-section">
+            <img src="orange saha.png" alt="Sahaya Saarige Logo">
+        </div>
+    </div>
+
+    <div class="container-3">
+        <div class="text-section-3 solutions">
+            <h3>Solutions</h3>
+            <ul>
+                <li>SAHAYAK is a revolutionary bus transit app designed specifically for the visually impaired community, empowering users to navigate public transportation with confidence and ease.</li>
+                <li>Intuitive Voice Guidance: SAHAYAK provides clear and precise voice instructions throughout the journey, ensuring users receive real-time updates and directions.</li>
+                <li>Customized Route Planning: Users can plan routes by inputting their destination. The app considers user preferences and accessibility features to provide optimized travel plans.</li>
+                <li>Accessible Bus Stop Information: Detailed information about nearby bus stops, including names, routes, schedules, and accessibility features, helps users find the best stops.</li>
+                <li>Real-Time Bus Tracking: Stay informed about bus arrivals and departures with SAHAYAK's live tracking feature, ensuring users never miss their bus.</li>
+                <li>User-Friendly Interface: The app's interface is designed with large buttons, high contrast colors, and customizable settings, making it easy to navigate for visually impaired users.</li>
+            </ul>
+        </div>
+
+        <div class="image-section">
+            <img src="big screen.png" alt="Solutions Image">
+        </div>
+    </div>
+
+    <img src="screens.png" class="finisher" alt="Final Image">
+
+    <a href="index.html">
+        <img src="yellow arrow.png" class="gobackboi" alt="Click to go to another page">
+    </a>
+
+
+    <div class="bottom-box"></div> <!-- Added bottom box -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return rect.top >= 0 && rect.bottom <= window.innerHeight;
+            }
+
+            const sections = document.querySelectorAll('.container-2, .container, .container-3, .finisher');
+
+            window.addEventListener('scroll', function() {
+                sections.forEach(function(section) {
+                    if (isInViewport(section)) {
+                        section.classList.add('visible');
+                    }
+                });
+            });
+
+            window.dispatchEvent(new Event('scroll'));
+        });
+    </script>
+
+</body>
+</html>

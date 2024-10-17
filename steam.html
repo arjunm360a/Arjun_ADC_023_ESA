@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined Codes</title>
+    <style>
+        /* General body styles */
+        body {
+            font-family: 'https://fonts.cdnfonts.com/css/sf-pro-display', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+
+        body {
+            cursor: url('steamcurr.png'), auto; /* Default cursor */
+        }
+
+        /* Custom scrollbar styles */
+ ::-webkit-scrollbar {
+            width: 12px; /* Width of the scrollbar */
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #232323; /* Track color */
+            border-radius: 10px; /* Rounded track corners */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ecd551; /* Thumb color */
+            border-radius: 10px; /* Rounded thumb corners */
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ffd900; /* Thumb color on hover */
+        }
+
+
+        /* Main container to hold both text and logo */
+        .container {
+            display: flex; /* Align items side by side */
+            justify-content: space-between; /* Space between text and logo */
+            align-items: center; /* Vertically center align */
+            padding: 40px; /* Space around the content */
+            max-width: 1200px; /* Maximum width of the container */
+            margin: 0 auto; /* Center the container horizontally */
+        }
+
+        /* Text container */
+        .text-section {
+            flex: 1; /* Allow text section to take up available space */
+            max-width: 60%; /* Max width to limit text spread */
+        }
+
+        /* Heading for pain points */
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        /* Style for pain points list */
+        ul {
+            list-style-type: disc; /* Bullet points for list */
+            padding-left: 20px; /* Space between bullets and text */
+        }
+
+        /* Style for each pain point item */
+        li {
+            font-size: 18px;
+            line-height: 1.6; /* Line spacing for readability */
+            color: #333;
+            margin-bottom: 10px; /* Space between list items */
+        }
+
+        /* Logo container */
+        .logo-section {
+            flex: 0 0 30%; /* Fixed size for logo section, no shrink or grow */
+            display: flex;
+            justify-content: center; /* Center the logo horizontally */
+            align-items: center; /* Center the logo vertically */
+            background-color: #333; /* Background for the logo */
+            padding: 2px; /* Padding around the logo */
+            border-radius: 20px; /* Rounded corners */
+            margin-bottom: 40px; /* Added margin to increase space below */
+        }
+
+        /* Image inside the logo section */
+        .logo-section img {
+            width: 100%; /* Logo takes up full width of the container */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        /* Styles for Brief and Problem Statement */
+        .container-2, .container, .container-3 {
+            opacity: 0; /* Initial opacity */
+            transition: opacity 0.5s ease-in-out; /* Smooth transition */
+        }
+
+        /* Add this class when the content is visible */
+        .container-2.visible, .container.visible, .container-3.visible {
+            opacity: 1; /* Full opacity when visible */
+        }
+
+        .container-2 {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 40px;
+            max-width: 100%;
+            margin: 0 auto;
+            position: relative;
+            top: 0px;
+            left: 0px;
+        }
+
+        .left {
+            flex: 0 1 auto;
+        }
+
+        .logo {
+            width: 400px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .right {
+            flex: 1;
+            padding-left: 90px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        h2 {
+            font-size: 38px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #555;
+            line-height: 2;
+        }
+
+        /* Solutions section */
+        .container-3 {
+            background-color: #f2d14b;
+            padding: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 3000px;
+            margin: 40px auto;
+            border-radius: 10px;
+        }
+
+        .text-section-3 {
+            flex: 9;
+            padding-right: 50px;
+        }
+
+        h3 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        li {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .image-section {
+            flex: 0 0 30%;
+        }
+
+        .image-section img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .finisher {
+            position: relative;
+            left: 90px;
+            top: 70px;
+            height: 1087px;
+            width: 1308px;
+        }
+
+        .gobackboi {
+            position: relative;
+            left: 700px;
+            top: 400px;
+            width: 118px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gobackboi:hover {
+            transform: scale(1.1);
+            opacity: 0.9;
+        }
+
+        .footer {
+            height: 50px;
+            background-color: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+            padding: 10px;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .empty-space {
+            height: 800px;
+        }
+
+
+
+
+/* Container control */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 90%; /* Adjust this to control the width */
+    margin: 0 auto; /* Centers the container */
+}
+
+/* Section control for Pain Points and Solutions */
+.pain-points, .solutions {
+    width: 45%; /* Adjust to control section width */
+}
+
+/* Heading controls */
+.pain-points h2, .solutions h2 {
+    font-size: 44px; /* You can adjust the font size here */
+    font-family: 'https://fonts.cdnfonts.com/css/sf-pro-display', sans-serif; /* You can change the font family here */
+    font-weight: bold;
+    color: #232323;
+    margin-bottom: 15px;
+}
+
+/* Text and list style */
+.pain-points ul, .solutions ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.pain-points ul li, .solutions ul li {
+    font-size: 16px; /* You can adjust the font size here */
+    font-family: 'Arial', sans-serif; /* You can change the font family here */
+    color: #666;
+    line-height: 1.6; /* Line spacing */
+    margin-bottom: 10px;
+}
+
+/* Media query to ensure responsiveness */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .pain-points, .solutions {
+        width: 100%; /* Make it full width for smaller screens */
+        margin-bottom: 20px;
+    }
+}
+  /* Main container to hold both text and logo */
+  .container {
+            display: flex; /* Align items side by side */
+            justify-content: space-between; /* Space between text and logo */
+            align-items: center; /* Vertically center align */
+            padding: 40px; /* Space around the content */
+            max-width: 1200px; /* Maximum width of the container */
+            margin: 0 auto; /* Center the container horizontally */
+        }
+
+        /* Button styles */
+        .comparison-button {
+            background-color: #000; /* Black background */
+            color: #ecd551; /* Text color */
+            padding: 15px 30px; /* Space inside the button */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effect */
+            font-size: 16px; /* Adjust font size */
+            font-family: 'https://fonts.cdnfonts.com/css/sf-pro-display', sans-serif; /* Font */
+        }
+
+        /* Button hover effect */
+        .comparison-button:hover {
+            background-color: #333; /* Darker shade on hover */
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+
+        /* Control the position of the button */
+        .button-container {
+            text-align: center; /* Center by default */
+            margin-top: 20px; /* Space above the button */
+            position: relative; /* For adjusting positioning */
+            top: 100px; /* Adjust the vertical position */
+            left: 0px; /* Adjust the horizontal position */
+        }
+
+        /* Adjustments for smaller screens */
+        @media (max-width: 768px) {
+            .button-container {
+                margin-top: 30px; /* Space for mobile screens */
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container-2">
+        <div class="left">
+            <img src="steam clr.png" alt="Sahaya Saarige Logo" class="logo">
+        </div>
+        <div class="right">
+            <h2>Brief</h2>
+            <p>Redesign the UI of an already existing software based on user research and make the changes as per the user needs.</p>
+            <h2>Problem Statement</h2>
+            <p>To solve the over complex UI of steam.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="pain-points">
+            <h2>Pain Points:</h2>
+            <ul>
+                <li>One of the key takeaways was the importance of feedback and clear communication within the interface. By ensuring that users are consistently informed about the system's status and providing clear cues for navigation and interaction, we can enhance usability and reduce cognitive load.</li>
+                <li>Moreover, heuristic evaluation highlighted the value of simplicity and consistency in design. By streamlining interfaces and maintaining consistency in layout, terminology, and visual elements, we can minimize user confusion and enhance learnability.</li>
+                <li>Additionally, understanding the significance of user control and freedom underscored the importance of empowering users to navigate the interface at their own pace, without feeling constrained or restricted.</li>
+                <li>Overcomplicated UI which was developed over time for more seasoned users. Not being considerate for the newer users.</li>
+            </ul>
+        </div>
+
+        <div class="solutions">
+            <h2>Solutions:</h2>
+            <ul>
+                <li>After narrowing down our target audience we started our user testing. We all took turns taking down the metrics of every user, we had a different spokesperson, timekeeper & metrics collectors.</li>
+                <li>After our testing, we found out that even the best of the best software's and apps also have flaws though these companies have done in-depth research.</li>
+                <li>We figured that these apps are usually developed for specific demographics.</li>
+                <li>This helped strengthen our final report and our modified Hi-Fi screens.</li>
+                <li>Since we were doing the user test on "Steam" and most of the users had a bit or good knowledge of the UI, they almost all found it very simple to use.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <a href="sliderrrish.html" id="comparison-link">
+            <button class="comparison-button">Click to See Image Comparison</button>
+        </a>
+    </div>
+
+
+    <a href="index.html">
+        <img src="arow.png" class="gobackboi" alt="Click to go to another page">
+    </a>
+
+    <div class="empty-space"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return rect.top >= 0 && rect.bottom <= window.innerHeight;
+            }
+
+            const sections = document.querySelectorAll('.container-2, .container, .container-3');
+
+            window.addEventListener('scroll', function() {
+                sections.forEach(function(section) {
+                    if (isInViewport(section)) {
+                        section.classList.add('visible');
+                    }
+                });
+            });
+
+            window.dispatchEvent(new Event('scroll'));
+        });
+    </script>
+
+</body>
+</html>
