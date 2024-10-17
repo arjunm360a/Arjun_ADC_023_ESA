@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined Codes</title>
+    <style>
+        /* General body styles */
+        body {
+            font-family: 'https://fonts.cdnfonts.com/css/sf-pro-display', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+
+        body {
+            cursor: url('gamedescurr.png'), auto; /* Default cursor */
+        }
+
+        /* Custom scrollbar styles */
+ ::-webkit-scrollbar {
+            width: 12px; /* Width of the scrollbar */
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #232323; /* Track color */
+            border-radius: 10px; /* Rounded track corners */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ecd551; /* Thumb color */
+            border-radius: 10px; /* Rounded thumb corners */
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ffd900; /* Thumb color on hover */
+        }
+
+
+        /* Main container to hold both text and logo */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            opacity: 0; /* Start hidden */
+            transition: opacity 0.5s ease-in-out; /* Smooth transition */
+        }
+
+        /* Text container */
+        .text-section {
+            flex: 1;
+            max-width: 60%;
+        }
+
+        /* Heading for pain points */
+        h1, h2 {
+            font-size: 36px;
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        /* Style for pain points list */
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            color: #555;
+        }
+
+        /* Style for each pain point item */
+        li {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        /* Logo container */
+        .logo-section {
+            flex: 0 0 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            padding: 2px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            opacity: 0; /* Start hidden */
+            transition: opacity 0.5s ease-in-out; /* Smooth transition */
+        }
+
+        /* Image inside the logo section */
+        .logo-section img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .container-2 {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 40px;
+            max-width: 100%;
+            margin: 0 auto;
+            opacity: 0; /* Start hidden */
+            transition: opacity 0.5s ease-in-out; /* Smooth transition */
+        }
+
+        .left {
+            flex: 0 1 auto;
+        }
+
+        .logo {
+            width: 400px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .right {
+            flex: 1;
+            padding-left: 90px;
+            max-width: 900px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #555;
+            line-height: 2;
+        }
+
+        /* Solutions section */
+        .container-3 {
+            background-color: #f2d14b;
+            padding: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 3000px;
+            margin: 40px auto;
+            border-radius: 10px;
+            opacity: 0; /* Start hidden */
+            transition: opacity 0.5s ease-in-out; /* Smooth transition */
+        }
+
+        .text-section-3 {
+            flex: 9;
+            padding-right: 50px;
+        }
+
+        h3 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .image-section {
+            flex: 0 0 30%;
+            margin-left: 20px;
+        }
+
+        .image-section img {
+            width: 250px;
+            height: 500px;
+            border-radius: 10px;
+        }
+
+        .finisher {
+            position: relative;
+            left: 20px;
+            top: 70px;
+            height: 1087px;
+            width: 1400px;
+        }
+
+        .gobackboi {
+            position: relative;
+            left: 700px;
+            top: 500px;
+            width: 118px;
+            cursor: pointer;
+        }
+
+        .footer {
+            height: 50px;
+            background-color: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+            padding: 10px;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .empty-space {
+            height: 800px;
+        }
+
+        /* Adjust layout for smaller screens */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .image-section {
+                margin: 20px 0 0 0;
+                width: 100%;
+            }
+
+            .text-section {
+                max-width: 100%;
+            }
+        }
+
+        .game-screens-container {
+            background-color: #232323; /* Box color */
+            padding: 150px; /* Padding for the box */
+            border-radius: 10px; /* Rounded corners */
+            margin: 40px auto; /* Centering the box */
+            max-width: 100%; /* Ensuring max width */
+            position: relative; /* For positioning inner elements */
+        }
+
+        .game-screens {
+            display: flex;
+            justify-content: space-between;
+            padding: 0; /* Resetting padding to allow for container padding */
+            gap: 20px;
+        }
+
+        .game-screen {
+            flex: 1;
+            max-width: 250px; /* Reduce the maximum width of each game screen */
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .game-screen img {
+            width: 100%;
+            border-radius: 0px;
+            transition: transform 0.3s ease;
+        }
+
+        .game-screen:hover img {
+            transform: scale(1.05);
+        }
+
+        .game-screen .screen-text {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            background-color: rgba(5, 0, 0, 0.7);
+            color: #ecd551;
+            font-size: 16px;
+            padding: 10px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .game-screen:hover .screen-text {
+            opacity: 1;
+        }
+
+        /* Centered character image */
+        .centered-img {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            top: 240px; /* Control vertical positioning */
+            left: 30px; /* Control horizontal positioning */
+        }
+
+        .centered-img img {
+            width: 90%;
+            position: relative;
+            top: 20px;
+            animation: moveRightToLeft 10s linear infinite; /* Animation added */
+        }
+
+        /* Title style for the game screens */
+        .gameplay-title {
+            position: absolute; /* Positioned relative to the container */
+            top: 20px; /* Distance from the top */
+            left: 20px; /* Distance from the left */
+            color: white; /* Text color */
+            font-size: 34px; /* Text size */
+            font-weight: 600;
+        }
+
+        .gameplay-title span {
+            color: #ecd551; /* Color for the first letter */
+        }
+
+        .charectorstitle {
+            position: absolute; /* Positioned relative to the container */
+            top: 2100px; /* Distance from the top */
+            left: 20px; /* Distance from the left */
+            color: #232323; /* Text color */
+            font-size: 54px; /* Text size */
+            font-weight: 600;
+        }
+        .charectorstitle span {
+            color: #ecd551; /* Color for the first letter */
+        }
+
+        /* Keyframes for moving the image from left to right */
+        @keyframes moveRightToLeft {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="container-2">
+        <div class="left">
+            <img src="jalebi.png" alt="Sahaya Saarige Logo" class="logo">
+        </div>
+        <div class="right">
+            <h2>Brief</h2>
+            <p>Based on an existing game, redesigned to create something new.</p>
+            <h2>Concept</h2>
+            <p>We took up the game Hunters Vs Assassin. We added a time travel concept to the game to get rid of the repetitive loop, making it more open to new concepts and ideas. This enhances engagement and fun for the users.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="text-section">
+            <h2>Old Game Flaws</h2>
+            <ul>
+                <li>The game suffered from a lack of updates. This was not because the developers didn't care or the game wasn't working but instead the game didn't have a good plot or story to give new content to the users.</li>
+                <li>Lack of assets.</li>
+                <li>No rewards or reason for the players to come back.</li>
+            </ul>
+        </div>
+        <div class="image-section">
+            <img src="topgane.png" alt="Old Game Screenshot">
+        </div>
+    </div>
+
+    <div class="game-screens-container"> <!-- New container for the game screens -->
+        <div class="gameplay-title"><span> G</span>ameplay Screens</div> <!-- Title for the gameplay screens -->
+        <div class="game-screens">
+            <div class="game-screen">
+                <img src="screen1.png" alt="Leaderboard">
+                <div class="screen-text">Leaderboard: Purpose of a leaderboard is to introduce a competitive nature among the casual players.</div>
+            </div>
+            <div class="game-screen">
+                <img src="screen2.png" alt="Brutal Gameplay">
+                <div class="screen-text">More action: By introducing a more action-packed game, the chances of keeping the player hooked and engrossed will increase.</div>
+            </div>
+            <div class="game-screen">
+                <img src="screen3.png" alt="Daily Challenge">
+                <div class="screen-text">Daily rewards: By giving each player a daily reward you give them a purpose to come back the next day for more.</div>
+            </div>
+            <div class="game-screen">
+                <img src="screen4.png" alt="Weekly Rewards">
+                <div class="screen-text">Weekly Rewards: Awarding players for playing your game for longer than others will only increase your players' return rate.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="charectorstitle"><span>C</span>haracters Design</div> <!-- Title for the gameplay screens -->
+
+    <div class="centered-img">
+        <img src="charectors.png" alt="Characters Image">
+    </div>
+
+    <a href="index.html">
+        <img src="arow.png" class="gobackboi" alt="Click to go to another page">
+    </a>
+
+    <div class="empty-space"></div>
+
+    <script>
+        // Function to check if an element is in the viewport
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        // Function to reveal elements when they are in the viewport
+        function revealOnScroll() {
+            const elements = document.querySelectorAll('.container, .container-2, .container-3');
+            elements.forEach(el => {
+                if (isElementInViewport(el)) {
+                    el.style.opacity = 1; // Change opacity to visible
+                }
+            });
+        }
+
+        // Listen to scroll events
+        window.addEventListener('scroll', revealOnScroll);
+        // Initial check on page load
+        window.addEventListener('load', revealOnScroll);
+    </script>
+
+</body>
+</html>

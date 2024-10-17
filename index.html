@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">     
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centered Navbar with Hover Effect</title>
+  <style>
+
+  </style>
+  <script>
+  
+    function showPopup() {
+      alert("Lets get in touch!!");
+    }
+  </script>
+  <!-- To slowly reveal itself -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+
+</head>
+
+
+  <style>
+   
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+            cursor: url('cursorr.png'), auto; 
+        }
+
+    nav {
+  background-color: #232323;
+  height: 98px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5px;
+  position: fixed;
+  top: 0; 
+  width: 100%;
+  z-index: 1000; 
+}
+ /* Custom scrollbar styles */
+ ::-webkit-scrollbar {
+            width: 12px; 
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #232323; 
+            border-radius: 10px; 
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ecd551;
+            border-radius: 10px; 
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ffd900; 
+        }
+
+
+    .nav-links {
+      display: flex;
+      justify-content: space-between;
+      width: 1300px; 
+    }
+
+    .nav-links a {
+      position: relative;
+      color: white;
+      text-decoration: none;
+      font-size: 25px;
+      font-weight: bold;
+      padding-bottom: 5px;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 130px;
+      height: 2px;
+      background-color: #ecd551;
+      opacity: 0;
+      transition: opacity 0.3s, transform 0.3s;
+      transform-origin: center;
+    }
+
+    .nav-links a:hover {
+      color: #ecd551;
+    }
+
+    .nav-links a:hover::after {
+      opacity: 1;
+      transform: translateX(-50%) scaleX(1);
+    }
+
+    .hello-text {
+      position: absolute;
+      top: 240px;
+      left: 850px;
+      right: 0px;
+      font-size: 190px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      color: #232323;
+      line-height: 1px;
+      font-family: 'SF Pro Display 500', sans-serif;
+    }
+
+    .hello-text span {
+      color: #ecd551;
+    }
+
+    .intro-text {
+      position: absolute;
+      top: 350px;
+      left: 880px;
+      right: 5px;
+      font-size: 25px;
+      color: #232323;
+      line-height: 1.5;
+      font-family: 'SF Pro Display 500', sans-serif;
+    }
+
+    .intro-text span {
+      color: #ecd551;
+    }
+
+    .hobbies-text {
+      position: absolute;
+      top: 680px; 
+      left: 1020px;
+      right: 0px;
+      font-size: 70px;
+      font-weight: bold;
+      color: #232323;
+      font-family: 'SF Pro Display 500', sans-serif;
+    }
+
+    .hobbies-text span {
+      color: #ecd551;
+    }
+
+    .Software {
+            position: absolute;
+            letter-spacing: 2px;
+            top: 1400px;
+            left: 990px;
+            right: 0px;
+            font-size: 70px;
+            font-weight: bold;
+            color: #232323;
+            font-family: 'SF Pro Display 500', sans-serif;
+        }
+
+        .Software span {
+            color: #ecd551;
+        }
+
+        .software-squares {
+            position: absolute;
+            top: 1470px;
+            left: 870px;
+            right: 0px;
+            display: flex;
+            justify-content: space-between;
+            width: 600px;
+        }
+
+        .software-square:hover {
+            transform: scale(1.05);
+        }
+
+        .software-square {
+            width: 110px;
+            height: 110px;
+            background-color: #232323;
+            top: 50px;
+            border-radius: 10px;
+            position: relative;
+            transition: all 0.5s ease;
+        }
+
+        .rectangles {
+            position: absolute; 
+            top: 830px; 
+            left: 870px; 
+            right: 0px;
+            display: flex;
+            flex-direction: row; 
+            justify-content: space-between;
+            width: 600px; 
+        }
+
+        .rectangle {
+            width: 170px; 
+            height: 250px; 
+            background-color: #232323;
+            border-radius: 15px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .rectangle img {
+            position: absolute;
+            width: 150px;
+            height: auto;
+        }
+
+        .line {
+            width: 100%;
+            height: 14px;
+            background-color: #232323;
+            position: absolute;
+            top: 1750px;
+            bottom: auto;
+        }
+
+        .line2 {
+            width: 100%;
+            height: 5px;
+            background-color: #232323;
+            position: absolute;
+            top: 1770px;
+            bottom: auto;
+        }
+
+        .projects-text {
+            position: absolute;
+            top: 1820px; 
+            left: 98px;
+            right: 0px;
+            font-size: 90px;
+            font-weight: bold;
+            color: #232323;
+            font-family: 'SF Pro Display 500', sans-serif;
+        }
+
+        .projects-text span {
+            color: #ecd551;
+        }
+
+        .rectangle-text {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: white;
+            font-family: 'SF Pro Display 500', sans-serif;
+            font-size: 11px;
+            line-height: 1.5;
+            max-width: 140px;
+            text-align: left;
+        }
+
+        .bold-text {
+            font-weight: bold;
+            font-size: large;
+        }
+
+        .rectangle:hover img {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }  
+
+        .project-boxes {
+            position: absolute;
+            top: 1950px;
+            left: 450px;
+            width: 600px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 50px;
+        }
+
+    .project-boxes .box {
+      width: 170px;
+      height: 170px;
+      background-color: #232323;
+      border-radius: 15px;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+      position: relative;
+      transition: all 0s ease;
+    }
+
+    .project-boxes .stacked-boxes {
+      display: flex;
+      flex-direction: column;
+      gap: 5px; 
+    }
+
+    .project-boxes .stacked-boxes .box {
+      width: 170px;
+      height: 170px;
+      gap: 50px;
+    }
+
+
+    .nav-links {
+      display: flex;
+      justify-content: space-between;
+      width: 1300px; 
+    }
+
+    .nav-links a {
+      position: relative;
+      color: white;
+      text-decoration: none;
+      font-size: 25px;
+      font-weight: bold;
+      padding-bottom: 5px;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 130px;
+      height: 2px;
+      background-color: #ecd551;
+      opacity: 0;
+      transition: opacity 0.3s, transform 0.3s;
+      transform-origin: center;
+    }
+
+    .nav-links a:hover {
+      color: #ecd551;
+    }
+
+    .nav-links a:hover::after {
+      opacity: 1;
+      transform: translateX(-50%) scaleX(1);
+    }
+
+    .projects-text {
+      position: absolute;
+      top: 1820px; 
+      left: 98px;
+      right: 0px;
+      font-size: 90px;
+      font-weight: bold;
+      color: #232323;
+      font-family: 'SF Pro Display 500', sans-serif;
+    }
+
+    .projects-text span {
+      color: #ecd551;
+    }
+
+   
+    .projects-boxes {
+      position: absolute;
+      top: 1990px; 
+      left: 250px;
+      right: 0px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 70px;  
+    }
+
+    .project-box {
+      display: flex;
+      justify-content: center;  
+      align-items: center;  
+      width: 320px;
+      height: 250px;
+      background-color: #232323;
+      border-radius: 10px;
+      position: relative;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+      transition: all 0.2s ease;
+      
+    }
+
+    .project-box img {
+      max-width: 110%;  
+      max-height: 110%;  
+      object-fit: contain; 
+      border-radius: 10px;  
+    }
+
+    
+    .box-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-family: 'SF Pro Display 500', sans-serif;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    /* Add hover effect */
+    .project-box:hover {
+      transform: scale(1.05);
+    }
+
+    .line {
+      width: 100%; 
+      height: 14px;
+      background-color: #232323;
+      position: absolute;
+      top: 1750px;
+      bottom: auto;
+    }
+
+    .line2 {
+      width: 100%; 
+      height: 5px;
+      background-color: #232323;
+      position: absolute;
+      top: 1770px;
+    }
+    
+    .line3 {
+      width: 100%; 
+      height: 14px;
+      background-color: #ecd551;
+      position: absolute;
+      top: 2700px;
+      bottom: auto;
+      z-index: 2;
+    }
+
+    .line4 {
+      width: 100%; 
+      height: 5px;
+      background-color: #ecd551;
+      position: absolute;
+      top: 2720px;
+      z-index: 2;
+    }
+
+    .tigres {
+      position: relative;
+      left: 50px;
+      top: 380px;
+      height: 1300px;
+      width: 690px;
+    }
+
+    .bottom-box {
+      background-color: #232323; 
+      height: 800px; 
+      width: 100%; 
+      position: absolute; 
+      top: 2702px; 
+      bottom: 0;
+      z-index: 1; 
+    }
+
+    .form-container {
+    background-color:transparent;
+    font-family:'SF Pro Display 500', sans-serif;
+    padding: 90px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    position: absolute;  /* Add this */
+    top: 2830px; 
+    left: 1190px;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+
+        .form-title {
+            font-size: 44px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .form-title span {
+            color: #ecd551;
+        }
+
+        .liner {
+            border: none;
+            border-bottom: 2px solid #000;
+            width: 80%;
+            margin: 15px auto;
+            outline: none;
+            text-align: center;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="email"],
+        .form-container textarea {
+            border: none;
+            outline: none;
+            color: white;
+            font-family:'SF Pro Display 500', sans-serif;
+            width: 80%;
+            margin: 15px auto;
+            text-align: center;
+            font-size: 19px;
+            border-bottom: 2px solid #ecd551;
+            padding: 8px;
+            background: transparent;
+        }
+
+        textarea {
+            height: 50px;
+        }
+
+        input[type="submit"] {
+            background-color: #ecd551;
+            color: #232323;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #d1b04a;
+        }
+
+        .me {
+      position: relative;
+      left: -620px;
+      top: 2000px;
+      height: 380px;
+      width: 348px;
+      z-index: 2;
+    }
+
+
+
+    .icon-container {
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      background-color: #232323; 
+      padding: 20px; 
+
+
+      position:absolute; 
+      bottom: -2850px; 
+      left: 0px;
+      width: 1484px; 
+      z-index: 2;
+    }
+
+   
+    .icon {
+      width: 40px;
+      margin: 0 15px; 
+      cursor: pointer; 
+      transition: transform 0.3s ease; 
+    }
+
+   
+    .icon:hover {
+      transform: scale(1.1);
+    }
+
+  /* Example burst animation styling */
+.burst {
+    position: absolute;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px; 
+    animation: burst-animation 0.5s ease-out forwards;
+}
+
+@keyframes burst-animation {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+        background-color: #ecd551; 
+    }
+    25% {
+        background-color: #ecd551; 
+    }
+    50% {
+        background-color: #ecd551;
+    }
+    75% {
+        background-color: #ecd551; 
+    }
+    100% {
+        transform: scale(7);
+        opacity: 0;
+        background-color: transparent;
+    }
+}
+
+
+
+
+  </style>
+</head>
+<body>
+  
+
+    <div class="hello-text" id="hello" data-aos="fade-up">
+      <span>H</span>ello!!
+    </div>
+
+  <div class="intro-text" data-aos="fade-up">
+    Arjun Here,<br><br>
+    I’m an interaction designer based in Bangalore with a passion for doodling, and I enjoy infusing that creative touch into my workflow and the products I create.
+  </div>
+
+  <!-- Nav bar movememnt Thingie -->
+  <nav>
+    <div style="font-family:'SF Pro Display 500', sans-serif;" class="nav-links" >
+      <a href="#">About Me</a>
+      <a href="#projects">Projects!!</a>
+      <a href="#Contact">Contact Me</a>
+    </div>
+  </nav>
+
+  <div class="hobbies-text" data-aos="fade-up">
+    <span>H</span>OBBIES
+  </div>
+
+  <!-- Hobbies box section -->
+  <div class="rectangles" data-aos="fade-up">
+    <div class="rectangle" id="rectangle1">
+      <img src="art.png" alt="Image 1" class="hover-img" data-hover="yeloow art.png" style="top: 120px; left: 25px; width: 100px; height: 100px;">
+      <div class="rectangle-text">
+        <span class="bold-text">Doodling</span><br>
+        I love doodling a lot let it be in my sketch book or on my laptop. I always find a little time to doodle
+      </div>
+    </div>
+
+    <div class="rectangle" id="rectangle2" data-aos="fade-up">
+      <img src="musical-note.png"  alt="Image 2" class="hover-img" data-hover="ywllow music.png" style="top: 130px; left: 25px; width: 100px; height: 100px;">
+      <div class="rectangle-text">
+        <span class="bold-text">Music</span><br>
+        I find solitude in listening its a fun escape from the work in hand at times.
+      </div>
+    </div>
+
+    <div class="rectangle" id="rectangle3" data-aos="fade-up">
+      <img src="white game.png" alt="Image 3" class="hover-img" data-hover="game yellow.png" style="top: 130px; left: 21px; width: 130px; height: 130;">
+      <div class="rectangle-text">
+        <span class="bold-text">Gaming</span><br>
+        Gaming is my escape. It helps me unwind after a long day.
+        </div>
+      </div>
+    </div>
+
+    <!-- Software section -->
+    <div class="Software" data-aos="fade-up">
+      <span>S</span>OFTWARE
+    </div>
+
+    <!-- Four equally spaced squares -->
+    <div class="software-squares" data-aos="fade-up">
+      <div class="software-square" data-aos="fade-up">
+        <img src="photoshop (1).png" alt="Photoshop" class="hover-img" data-hover="photoshop.png" style="width: 100%; height: 100%;">
+      </div>
+      <div class="software-square"data-aos="fade-up">
+        <img src="ai black.png" alt="Illustrator" class="hover-img" data-hover="illu clr.png" style="width: 100%; height: 100%;">
+      </div>
+      <div class="software-square"data-aos="fade-up">
+        <img src="figma black.png" alt="Figma" class="hover-img" data-hover="figma clr.png" style="width: 100%; height: 100%;">
+      </div>
+      <div class="software-square"data-aos="fade-up">
+        <img src="after eff black.png" alt="After Effects" class="hover-img" data-hover="ae clr.png" style="width: 100%; height: 100%;">
+      </div>
+    </div>
+
+
+
+    <div class="line"data-aos="fade-up"></div>
+    <div class="line2"data-aos="fade-up"></div>
+
+    <!-- Projects Section -->
+    <div class="projects-text" id="projects"data-aos="fade-up">
+      <span>P</span>ROJECTS
+    </div>
+  
+   <!-- Box container with images -->
+    <div class="projects-boxes"data-aos="fade-up">
+      <!-- First row -->
+      <div class="project-box"data-aos="fade-up">
+        <a href="sahayasarigee.html" class="project-box"> 
+        <img src="sahaya.png" alt="Project 1" class="hover-img" data-hover="sahaya clr.png" ></a>
+      </div>
+      <div class="project-box"data-aos="fade-up">
+        <a href="zine.html" class="project-box"> 
+        <img src="zine 1.png" alt="Project 2" class="hover-img" data-hover="zine clr.png"> </a>
+      </div>
+      <div class="project-box"data-aos="fade-up">
+        <a href="shayak.html" class="project-box"> 
+        <img src="sihayak.png" alt="Project 3" class="hover-img" data-hover="siha clr.png"> </a>
+      </div>
+
+      <!-- Second row -->
+      <div class="project-box"data-aos="fade-up">
+        <a href="steam.html" class="project-box"> 
+        <img src="steam.png" alt="Project 4" class="hover-img" data-hover="steam clr.png"> </a>
+      </div>
+      <div class="project-box"data-aos="fade-up">
+        <a href="scribble.html" class="project-box"> 
+        <img src="scriblle bw.png" alt="Project 5" class="hover-img" data-hover="scriblle clr.png"> </a>
+      </div>
+      <div class="project-box"data-aos="fade-up">
+        <a href="gamedes.html" class="project-box"> 
+        <img src="game des bw.png" alt="Project 6" class="hover-img" data-hover="game des clr.png"> </a>
+      </div>
+    </div>
+
+    <div class="line3"data-aos="fade-up"></div>
+    <div class="line4"data-aos="fade-up"></div>
+
+     <!-- Tiger image placement -->
+    <img src="tigressss 1.png" class="tigres" alt="" data-aos="fade-up">
+     
+     <!-- Black box behind the form -->
+    <div class="bottom-box"data-aos="fade-up"></div>
+
+      <!-- Form Section -->
+    <div class="form-container" id="Contact">
+      <h2 class="form-title">Contact <span>Me</span></h2>
+      <form action="index.html" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required><br>
+        <input type="email" name="email" placeholder="Your Email" required><br>
+        <textarea name="message" placeholder="Your Message" required></textarea><br>
+        <input type="submit" value="Submit" onclick="showPopup()">
+      </form>
+    </div>
+
+    <img src="illme.png" class="me" alt=""> 
+
+
+     <!-- Social Media Conection thinggesss -->
+    <div class="icon-container">
+
+      <!-- Instagram Icon with link -->
+      <a href="https://www.instagram.com/_a.r.j.x.n_/">
+        <img src="insta b.png" alt="Project 6" class="icon" data-hover="insta c.png"> </a>
+  
+      <!-- Behance Icon with link -->
+      <a href="https://www.behance.net/arjunmanu"> 
+        <img src="beha b.png" alt="Project 6" class="icon" data-hover="behance c.png"> </a>
+  
+      <!-- LinkedIn Icon with link -->
+      <a href="https://www.linkedin.com/in/arjun-manu-4ab371259/">
+        <img src="link b.png" alt="Project 6" class="icon" data-hover="link c.png">  </a>
+    </div>
+
+
+    <script>
+
+      const hoverImages = document.querySelectorAll('.hover-img, .icon');
+    
+      hoverImages.forEach(img => {
+          const originalSrc = img.src;
+          const hoverSrc = img.getAttribute('data-hover');
+    
+
+          img.parentElement.addEventListener('mouseenter', () => {
+              img.src = hoverSrc;
+          });
+    
+          img.parentElement.addEventListener('mouseleave', () => {
+              img.src = originalSrc;
+          });
+      });
+      
+      // Click animation with color change
+      document.addEventListener('click', function(e) {
+          // Create the burst element
+          const burst = document.createElement('div');
+          burst.classList.add('burst');
+    
+          // Position the burst at the mouse click location, accounting for scroll offsets
+          burst.style.left = `${e.clientX + window.scrollX}px`;
+          burst.style.top = `${e.clientY + window.scrollY}px`;
+    
+          // Append to the body
+          document.body.appendChild(burst);
+          
+          // Remove the burst element after animation is complete
+          setTimeout(() => {
+              burst.remove();
+          }, 500); // Adjust duration to match your animation
+      });
+    </script>
+    <script>
+      AOS.init({
+        duration: 1000, // Animation duration
+        easing: 'ease-in-out', // Easing function
+      });
+    </script>
+    
+    
+
+
+</html>
